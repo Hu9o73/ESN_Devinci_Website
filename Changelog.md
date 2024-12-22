@@ -1,5 +1,10 @@
 # Changelog
 
+## V 0.0.4
+
+- Frontend 0.0.3 / Backend 0.0.1
+- Added the backend base
+
 ## V 0.0.3
 
 - Added Sign up / Login pages (placeholders for now)
