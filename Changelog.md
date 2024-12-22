@@ -1,5 +1,10 @@
 # Changelog
 
+## V 0.0.3
+
+- Added Sign up / Login pages (placeholders for now)
+- Added redirection to Error404 page when entering an invalid URL 
+
 ## V 0.0.2
 
 - Upgrade of the basic architecture.
