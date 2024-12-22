@@ -22,3 +22,21 @@
     font-family: 'LatoLight';
     src: url('../public/Fonts/Content/Lato-Light.ttf');
 }
+
+@font-face {
+    font-family: 'LatoSemiBold';
+    src: url('../public/Fonts/Content/Lato-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('../public/Fonts/Content/Lato-Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'KelsonBold';
+}
+
+p {
+    font-family: 'LatoRegular';
+}
