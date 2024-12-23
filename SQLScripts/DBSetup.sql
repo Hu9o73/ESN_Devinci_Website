@@ -15,5 +15,9 @@ CREATE TABLE users (
     Year VARCHAR(10),                      -- Year as a string (e.g., "A4")
     Program VARCHAR(255),                  -- Program as a string (e.g., "Classic")
     School VARCHAR(255),                   -- School as a string (e.g., "ESILV")
-    Role VARCHAR(255)					   -- Role inside of ESN Association
+    Role VARCHAR(255) DEFAULT "Member",	   -- Role inside of ESN Association
+    
+    -- For secured Authentication system (with JWT)
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

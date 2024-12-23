@@ -1,5 +1,6 @@
 import express, {Router, Request, Response} from 'express'
 import sequelize from '../ConfigFiles/dbConfig';
+import authenticate from './AuthenticationControllers/authMiddleware';
 
 const router = Router()
 
@@ -12,5 +13,9 @@ router.get('/api/liveness', (req: Request, res: Response) =>{
     const answer = "API is alive."
     res.json(answer);
 })
+
+router.get('/protected', authenticate, (req, res)=>{
+    res.json({message: 'This is a protected route', user: req});
+});
 
 export default router;

@@ -1,7 +1,7 @@
-# ESN Devinci Website v0.0.4
+# ESN Devinci Website v0.0.5
 
-### Frontend V0.0.3 | Backend V0.0.1
+### Frontend V0.0.4 | Backend V0.0.2
 
 <br>
 
-Not usable at the moment. Only features some static/placeholder pages.
+Can sign-up and connect ! No much to do afterwards tho.

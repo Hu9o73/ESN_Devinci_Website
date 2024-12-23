@@ -4,6 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 
 // Import endpoints
 import basicEndpoints from "./api/utilityEndpoints";
+import authEndpoints from "./api/routes/auth";
 
 // Import database
 import sequelize from "./ConfigFiles/dbConfig";
@@ -13,6 +14,9 @@ const cors = require('cors');
 
 const app: Express = express();
 const port = 3000;
+
+// Body parser
+app.use(express.json());
 
 // CORS for any origin: 
 // app.use(cors());
@@ -39,15 +43,16 @@ const swaggerOptions = {
 
 // Use the endpoints defined
 app.use(basicEndpoints);
+app.use(authEndpoints);
 
 // Serve Swagger UI at /api-docs
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
+
 // Database test connection
 testDatabaseConnection(sequelize);
-
 
 // Server running ?
 app.listen(port, () => {

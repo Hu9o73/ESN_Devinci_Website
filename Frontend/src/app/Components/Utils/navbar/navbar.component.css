@@ -11,6 +11,17 @@
 }
 
 
+.user-info {
+	display: flex; /* Ensures proper alignment */
+	align-items: center; /* Vertically centers the content */
+	margin-bottom: 0; /* Removes any extra margin */
+	padding: 20px; /* Optional: Adjust if necessary */
+	font-size: 1rem; /* Match the font size with other items */
+	line-height: 1.5; /* Consistent line height */
+	font-family: 'KelsonRegular';
+  }
+
+
 .btn-primary {
     padding: 17px 40px;
     border-radius: 50px;

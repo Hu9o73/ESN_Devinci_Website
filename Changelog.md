@@ -1,5 +1,14 @@
 # Changelog
 
+## V 0.0.5
+- Frontend 0.0.4 / Backend 0.0.2
+- Added dotenv, JWT dependencies to the backend
+- Working with .env file in the backend, to configure the database mostly
+- Added JWT authentication, Middleware, Interceptor (No guards/protected endpoints yet)
+- User can Sign up and login from the frontend
+- Sessions are persistent for 2 hours
+- Added a button to log-out when connected, and to access your personal space (not implemented yet)
+
 ## V 0.0.4
 
 - Frontend 0.0.3 / Backend 0.0.1
