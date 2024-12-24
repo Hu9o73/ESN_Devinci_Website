@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environments';
+import { jwtDecode } from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -59,5 +60,36 @@ export class AuthService {
       return !!localStorage.getItem('token');
     }
     return false;
+  }
+
+  isBureau(): boolean {
+    const token = localStorage.getItem('token');
+
+    if (!token){
+      return false;
+    }
+
+    try {
+      const decoded: any = jwtDecode(token);
+      const bureauRoles = ["President", "Vice-President", "Secretaire", "Tresorier", "Responsable", "Admin"]
+      return bureauRoles.includes(decoded.role);
+    } catch (error) {
+      return false;
+    }
+  }
+
+  isAdmin(): boolean {
+    const token = localStorage.getItem('token');
+
+    if(!token){
+      return false;
+    }
+
+    try{
+      const decoded: any = jwtDecode(token);
+      return decoded.role == "Admin";
+    } catch(error){
+      return false;
+    }
   }
 }

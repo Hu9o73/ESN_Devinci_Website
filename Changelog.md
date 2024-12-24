@@ -1,5 +1,15 @@
 # Changelog
 
+## V0.0.9
+- Frontend 0.0.8 / Backend 0.0.3
+- Added sub-menus to dashboard with placeholders (not use yet !)
+- Ensured the security of the different sub-menus.
+    - All sub-menus are children path of /dashboard
+        - The protection of /dashboard is thus transposed to its children, as an additional layer.
+    - Only admins can see and access the admin page for instance.
+    - Only the members part of the bureau can access the bureau page.
+    - Done with more Angular Guards and some new functions inside of the auth service.
+
 ## V0.0.8
 - Frontend 0.0.7 / Backend 0.0.3
 - Added Angular Guard.
