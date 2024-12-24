@@ -14,8 +14,11 @@ router.get('/api/liveness', (req: Request, res: Response) =>{
     res.json(answer);
 })
 
-router.get('/protected', authenticate, (req, res)=>{
-    res.json({message: 'This is a protected route', user: req});
+router.get('/protected', authenticate, (req: Request & {user?: any}, res: Response)=>{
+    res.json({
+        message: 'This is a protected route', 
+        user: req.user
+    });
 });
 
 export default router;

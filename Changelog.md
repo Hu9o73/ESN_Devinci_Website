@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.0.7
+- Frontend 0.0.6 / Backend 0.0.3
+- Small frontend correction : Spaced sign-up/log-in buttons for small screens
+- Added protected routes support in the backed. 
+
+
 ## V 0.0.6
 - Frontend 0.0.5 / Backend 0.0.2
 - Enhanced the error and success messages for user log/sign-in.
