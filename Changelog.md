@@ -1,5 +1,9 @@
 # Changelog
 
+## V 0.0.6
+- Frontend 0.0.5 / Backend 0.0.2
+- Enhanced the error and success messages for user log/sign-in.
+
 ## V 0.0.5
 - Frontend 0.0.4 / Backend 0.0.2
 - Added dotenv, JWT dependencies to the backend

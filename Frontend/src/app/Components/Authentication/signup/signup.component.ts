@@ -3,11 +3,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../Services/Authentication/auth.service';
 import { Observable } from 'rxjs';  // Import Observable for handling async operations
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
@@ -23,7 +24,8 @@ export class SignupComponent {
     year: ''
   };
 
-  errorMessage: string = ''; // Used to show errors if any
+  successMessage: string = '';
+  errorMessage: string = '';
   signupResponse$: Observable<any> | undefined;  // Observable for signup response
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -47,10 +49,13 @@ export class SignupComponent {
       (response) => {
         // Handle success
         console.log('Sign-in successful', response);
+        this.errorMessage = '';
+        this.successMessage = "User created succesfully ! You can now login."
       },
       (error) => {
         // Handle error
-        this.errorMessage = 'Server error when creating user.';
+        this.successMessage = '';
+        this.errorMessage = "Server error when creating user. User might already exist !";
         console.error(this.errorMessage);
       }
     );
