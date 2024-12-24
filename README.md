@@ -1,6 +1,6 @@
-# ESN Devinci Website v0.0.9
+# ESN Devinci Website v0.0.10
 
-### Frontend V0.0.8 | Backend V0.0.3
+### Frontend V0.0.9 | Backend V0.0.3
 
 <br>
 

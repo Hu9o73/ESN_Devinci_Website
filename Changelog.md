@@ -1,5 +1,13 @@
 # Changelog
 
+## V0.0.10
+- Frontend 0.0.9 / Backend 0.0.3
+- Added static pages, to make the home page more lively.
+    - FAQ
+    - What's ESN ?
+    - Meet the team
+    - How to join us ?
+
 ## V0.0.9
 - Frontend 0.0.8 / Backend 0.0.3
 - Added sub-menus to dashboard with placeholders (not use yet !)
