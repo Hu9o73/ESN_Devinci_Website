@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.0.8
+- Frontend 0.0.7 / Backend 0.0.3
+- Added Angular Guard.
+    - Redirects user to login page when not connected while trying to access a guarded page.
+- Added the dashboard component placeholder and guarded route.
+
 ## V0.0.7
 - Frontend 0.0.6 / Backend 0.0.3
 - Small frontend correction : Spaced sign-up/log-in buttons for small screens
