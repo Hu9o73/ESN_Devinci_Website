@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.0.11
+- Frontend 0.0.10 / Backend 0.0.4
+- Added role-limited endpoints (protection regarding the user role to access the endpoint)
+- Added a simple put endpoint to modify a given user role
+    - Access granted to Admins and President(s)
+- Added an interface to access this put endpoint in the Admin Dashboard
+
 ## V0.0.10
 - Frontend 0.0.9 / Backend 0.0.3
 - Added static pages, to make the home page more lively.

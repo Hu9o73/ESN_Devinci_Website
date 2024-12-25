@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 // Import endpoints
 import basicEndpoints from "./api/utilityEndpoints";
 import authEndpoints from "./api/routes/auth";
+import bureauEndpoints from "./api/bureauEndpoints";
 
 // Import database
 import sequelize from "./ConfigFiles/dbConfig";
@@ -44,6 +45,7 @@ const swaggerOptions = {
 // Use the endpoints defined
 app.use(basicEndpoints);
 app.use(authEndpoints);
+app.use(bureauEndpoints);
 
 // Serve Swagger UI at /api-docs
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

@@ -5,7 +5,7 @@ require('dotenv').config();
 const SECRET_KEY = process.env.JWT_SECRET || 'default_secret_key'; // Store it in an environment variable
   
 // Middleware to verify JWT token
-const authenticate = (req: Request & { user?: any }, res: Response, next: NextFunction) => {
+export const authenticate = (req: Request & { user?: any }, res: Response, next: NextFunction) => {
     
   const token = req.header('Authorization')?.replace('Bearer ', ''); // Extract token from Authorization header
   
@@ -23,5 +23,20 @@ const authenticate = (req: Request & { user?: any }, res: Response, next: NextFu
     return
   }
 };
-  
+
+
+// Middleware to verify roles
+export const authorizeRoles = (allowedRoles: string[]) => {
+  return (req: Request & { user?: any }, res: Response, next: NextFunction) => {
+    const user = req.user;
+
+    if (!user || !allowedRoles.includes(user.role)){
+      res.status(403).json({error: "Access denied. Insufficient permissions."});
+      return;
+    }
+
+    next();
+  }
+}
+
 export default authenticate;
