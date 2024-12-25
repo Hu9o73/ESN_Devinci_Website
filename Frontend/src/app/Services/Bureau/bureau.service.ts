@@ -10,8 +10,8 @@ import { jwtDecode } from "jwt-decode";
 })
 export class BureauService {
   
-  private apiUrl = environment.apiUrl;  // Your backend API URL
-
+  private apiUrl = environment.apiUrl;
+  
   constructor(private http: HttpClient) { }
 
   // Modify Role of a User

@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 // Import endpoints
 import basicEndpoints from "./api/utilityEndpoints";
 import authEndpoints from "./api/routes/auth";
+import memberEndpoints from "./api/memberEndpoints";
 import bureauEndpoints from "./api/bureauEndpoints";
 
 // Import database
@@ -45,6 +46,7 @@ const swaggerOptions = {
 // Use the endpoints defined
 app.use(basicEndpoints);
 app.use(authEndpoints);
+app.use(memberEndpoints);
 app.use(bureauEndpoints);
 
 // Serve Swagger UI at /api-docs

@@ -1,5 +1,17 @@
 # Changelog
 
+## V0.0.12
+- Frontend 0.0.11 / Backend 0.0.5
+- Added user profile page.
+    - User is now able to modify his personal data (nickname, email, scholarship details)
+    - Informations are retrieved by asking the database, imputting your JWT token.
+        - This is to ensure that a connected user don't simply change its id in the localStorage to try and access someone else's informations.
+        - Using the JWT token ensures heavy security. An attacker would need a valid token to access another user information. (= knowing who generated a token alongside its timestamp).
+    - The modifications are done securely:
+        - When modifying, the id of the user to modify is retrieved from the JWT token
+        - You need to enter your password to confirm changes.
+        - Password verification is done by asking the database, using the JWT token. Note: passwords are stored hashed on the database.
+
 ## V0.0.11
 - Frontend 0.0.10 / Backend 0.0.4
 - Added role-limited endpoints (protection regarding the user role to access the endpoint)

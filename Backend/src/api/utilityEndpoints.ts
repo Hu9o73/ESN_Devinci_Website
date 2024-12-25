@@ -1,6 +1,7 @@
 import express, {Router, Request, Response} from 'express'
 import sequelize from '../ConfigFiles/dbConfig';
 import authenticate from './AuthenticationControllers/authMiddleware';
+import User from '../models/users';
 
 const router = Router()
 

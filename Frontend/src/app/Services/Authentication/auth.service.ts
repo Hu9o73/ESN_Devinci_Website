@@ -4,12 +4,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environments';
 import { jwtDecode } from "jwt-decode";
+import { response } from 'express';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.apiUrl;  // Your backend API URL
+  private apiUrl = environment.apiUrl;
   private currentUserSubject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient, private router: Router) {
@@ -33,9 +34,6 @@ export class AuthService {
 
   // Login
   login(credentials: { email: string, password: string }): Observable<any> {
-    console.log("2) Email: ", credentials.email, " | Pwd: ", credentials.password);
-  
-    // Making the HTTP POST request
     return this.http.post(`${this.apiUrl}/login`, credentials);
   }
 
@@ -91,5 +89,13 @@ export class AuthService {
     } catch(error){
       return false;
     }
+  }
+
+  // Get info about user for given token
+  whoAmI(token: string): Observable<any> {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    return this.http.get(`${this.apiUrl}/whoAmI`, {headers});
   }
 }
