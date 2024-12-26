@@ -1,7 +1,7 @@
 {
   "name": "backend",
-  "version": "0.0.5",
-  "description": "Backend for Database Interface Project (ADBM course)",
+  "version": "0.0.6",
+  "description": "Backend for the ESN website",
   "main": "src/index.ts",
   "scripts": {
     "start": "npx ts-node src/index.ts",
@@ -32,5 +32,6 @@
     "mysql2": "^3.11.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
-  }
+  },
+  "keywords": []
 }

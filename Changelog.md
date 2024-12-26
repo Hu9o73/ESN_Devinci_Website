@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.0.13
+- Frontend 0.0.12 / Backend 0.0.6
+- Deployed to esn.hugobnl.fr
+    - Hosted on a VPS, server running on Nginx.
+    - Changed the filepaths to access public ressources (adding '/').
+    - Removed SSR, to make the deployment easier.
+
 ## V0.0.12
 - Frontend 0.0.11 / Backend 0.0.5
 - Added user profile page.
