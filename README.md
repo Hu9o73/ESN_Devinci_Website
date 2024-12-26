@@ -4,6 +4,6 @@
 
 <br>
 
-Website finally accessible ! [Website Link](esn.hugobnl.fr)
+Website finally accessible ! [Website Link](http://esn.hugobnl.fr)
 
 Can sign-up, connect and access your dashboard ! No much to do afterwards tho (yet)...
