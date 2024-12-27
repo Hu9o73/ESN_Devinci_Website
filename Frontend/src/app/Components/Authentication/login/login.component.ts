@@ -10,24 +10,26 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterLink, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
-  loginResponse$: Observable<any> | undefined;  // Use Observable here
+  loginResponse$: Observable<any> | undefined; // Use Observable here
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     const credentials = { email: this.email, password: this.password };
-  
+
     // Subscribe to the login observable to trigger the HTTP request
     this.authService.login(credentials).subscribe(
       (response) => {
+        
         // Handle success
         console.log('Login successful', response);
+
         // You can store the token and navigate to another page here
         this.authService.storeTokenAndUser(response.token, response.user);
         this.router.navigate(['/home']);

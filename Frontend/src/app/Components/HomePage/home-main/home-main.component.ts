@@ -9,15 +9,13 @@ import { SecondaryHomeHeaderComponent } from '../secondary-home-header/secondary
   selector: 'app-home-main',
   standalone: true,
   imports: [
-    NavbarComponent, 
+    NavbarComponent,
     HomeHeaderComponent,
     HomeCarouselComponent,
     HomeFooterComponent,
-    SecondaryHomeHeaderComponent
+    SecondaryHomeHeaderComponent,
   ],
   templateUrl: './home-main.component.html',
-  styleUrl: './home-main.component.css'
+  styleUrl: './home-main.component.css',
 })
-export class HomeMainComponent {
-
-}
+export class HomeMainComponent {}

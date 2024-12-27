@@ -9,7 +9,6 @@ import { WhatsESNComponent } from '../Components/StaticPages/whats-esn/whats-esn
 import { TheTeamComponent } from '../Components/StaticPages/the-team/the-team.component';
 import { JoinComponent } from '../Components/StaticPages/join/join.component';
 
-
 // Dashboard
 import { MyDashMainComponent } from '../Components/Dashboard/MyDashboard/my-dash-main/my-dash-main.component';
 import { MyProfileMainComponent } from '../Components/Dashboard/MyProfile/my-profile-main/my-profile-main.component';
@@ -23,31 +22,37 @@ import { AdminGuard } from '../Guards/admin.guard';
 import { BureauGuard } from '../Guards/bureau.guard';
 
 export const routes: Routes = [
-    {path:'home', component:HomeMainComponent},
-    {path:'signup', component:SignupComponent},
-    {path:'login', component:LoginComponent},
-    
-    {
-        path:'dashboard', 
-        component:DashboardMainComponent, 
-        canActivate:[AuthGuard],
-        children:[
-            {path: '', component:MyDashMainComponent},
-            {path: 'myDash', component:MyDashMainComponent},
-            {path: 'myProfile', component:MyProfileMainComponent},
-            {path: 'events', component:EventsMainComponent},
-            {path: 'admin', component: AdminMainComponent, canActivate:[AdminGuard]},
-            {path: 'bureau', component: BureauMainComponent, canActivate:[BureauGuard]}
-        ]
-    },
-    
-    {path:'faq', component:FAQComponent},
-    {path:'esn', component:WhatsESNComponent},
-    {path:'JoinUs', component:JoinComponent},
-    {path:'TheTeam', component:TheTeamComponent},
-    
-    
-    
-    {path:'', redirectTo:'home',pathMatch:'full'},
-    {path:'**', component:Error404Component}
+  { path: 'home', component: HomeMainComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+
+  {
+    path: 'dashboard',
+    component: DashboardMainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: MyDashMainComponent },
+      { path: 'myDash', component: MyDashMainComponent },
+      { path: 'myProfile', component: MyProfileMainComponent },
+      { path: 'events', component: EventsMainComponent },
+      {
+        path: 'admin',
+        component: AdminMainComponent,
+        canActivate: [AdminGuard],
+      },
+      {
+        path: 'bureau',
+        component: BureauMainComponent,
+        canActivate: [BureauGuard],
+      },
+    ],
+  },
+
+  { path: 'faq', component: FAQComponent },
+  { path: 'esn', component: WhatsESNComponent },
+  { path: 'JoinUs', component: JoinComponent },
+  { path: 'TheTeam', component: TheTeamComponent },
+
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: Error404Component },
 ];

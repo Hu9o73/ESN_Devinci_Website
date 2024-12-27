@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './home-carousel-card.component.html',
-  styleUrl: './home-carousel-card.component.css'
+  styleUrl: './home-carousel-card.component.css',
 })
 export class HomeCarouselCardComponent {
   @Input() image!: string;

@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from "express"; 
+import express, { Express } from "express";
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
@@ -25,7 +25,7 @@ app.use(express.json());
 
 // CORS for specific origins
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: ['localhost:4200', 'http://esn.hugobnl.fr'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

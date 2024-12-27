@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environments';
-import { jwtDecode } from "jwt-decode";
-import { response } from 'express';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = environment.apiUrl;
@@ -16,7 +15,9 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {
     // Check if localStorage is available (only in the browser)
     if (typeof window !== 'undefined' && window.localStorage) {
-      this.currentUserSubject = new BehaviorSubject<any>(localStorage.getItem('currentUser') || 'null');
+      this.currentUserSubject = new BehaviorSubject<any>(
+        localStorage.getItem('currentUser') || 'null'
+      );
     } else {
       this.currentUserSubject = new BehaviorSubject<any>(null);
     }
@@ -33,7 +34,7 @@ export class AuthService {
   }
 
   // Login
-  login(credentials: { email: string, password: string }): Observable<any> {
+  login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials);
   }
 
@@ -63,13 +64,20 @@ export class AuthService {
   isBureau(): boolean {
     const token = localStorage.getItem('token');
 
-    if (!token){
+    if (!token) {
       return false;
     }
 
     try {
       const decoded: any = jwtDecode(token);
-      const bureauRoles = ["President", "Vice-President", "Secretaire", "Tresorier", "Responsable", "Admin"]
+      const bureauRoles = [
+        'President',
+        'Vice-President',
+        'Secretaire',
+        'Tresorier',
+        'Responsable',
+        'Admin',
+      ];
       return bureauRoles.includes(decoded.role);
     } catch (error) {
       return false;
@@ -79,14 +87,14 @@ export class AuthService {
   isAdmin(): boolean {
     const token = localStorage.getItem('token');
 
-    if(!token){
+    if (!token) {
       return false;
     }
 
-    try{
+    try {
       const decoded: any = jwtDecode(token);
-      return decoded.role == "Admin";
-    } catch(error){
+      return decoded.role == 'Admin';
+    } catch (error) {
       return false;
     }
   }
@@ -96,6 +104,6 @@ export class AuthService {
     const headers = {
       Authorization: `Bearer ${token}`,
     };
-    return this.http.get(`${this.apiUrl}/whoAmI`, {headers});
+    return this.http.get(`${this.apiUrl}/whoAmI`, { headers });
   }
 }

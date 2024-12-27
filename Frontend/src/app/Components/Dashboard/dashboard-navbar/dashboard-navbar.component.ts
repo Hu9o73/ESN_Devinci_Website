@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './dashboard-navbar.component.html',
-  styleUrl: './dashboard-navbar.component.css'
+  styleUrl: './dashboard-navbar.component.css',
 })
 export class DashboardNavbarComponent {
   isBureau: boolean = false;

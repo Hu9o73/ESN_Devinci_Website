@@ -7,8 +7,6 @@ import { HomeFooterComponent } from '../../HomePage/home-footer/home-footer.comp
   standalone: true,
   imports: [NavbarComponent, HomeFooterComponent],
   templateUrl: './the-team.component.html',
-  styleUrl: './the-team.component.css'
+  styleUrl: './the-team.component.css',
 })
-export class TheTeamComponent {
-
-}
+export class TheTeamComponent {}
