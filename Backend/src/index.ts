@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from "express"; 
+import express, { Express } from "express";
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 

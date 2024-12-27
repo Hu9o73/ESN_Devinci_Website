@@ -11,10 +11,10 @@ import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideClientHydration(),
-    {provide : HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    provideHttpClient(withFetch())
-  ]
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    provideHttpClient(withFetch()),
+  ],
 };

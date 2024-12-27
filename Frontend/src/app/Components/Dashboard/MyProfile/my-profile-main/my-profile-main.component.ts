@@ -10,10 +10,9 @@ import { MembersService } from '../../../../Services/Members/members.service';
   standalone: true,
   imports: [HomeFooterComponent, CommonModule, FormsModule],
   templateUrl: './my-profile-main.component.html',
-  styleUrl: './my-profile-main.component.css'
+  styleUrl: './my-profile-main.component.css',
 })
 export class MyProfileMainComponent {
-
   successMessage = '';
   errorMessage = '';
   nickname = 'Jayjay';
@@ -28,19 +27,22 @@ export class MyProfileMainComponent {
   newPassword = '';
   confirmNewPassword = '';
 
-  constructor(private authService: AuthService, private memberService: MembersService) {}
+  constructor(
+    private authService: AuthService,
+    private memberService: MembersService
+  ) {}
 
-  ngOnInit(){
+  ngOnInit() {
     console.log(this.getUserInfo());
   }
 
-  getUserInfo(){
+  getUserInfo() {
     const token = localStorage.getItem('token');
-    if(!token){
-      console.log("No token provided !");
+    if (!token) {
+      console.log('No token provided !');
       return;
     }
-    
+
     this.authService.whoAmI(token).subscribe(
       (response) => {
         console.log(response);
@@ -53,25 +55,24 @@ export class MyProfileMainComponent {
         this.school = response.userSchool;
       },
       (error) => {
-        console.error("Error fetching user info:", error);
+        console.error('Error fetching user info:', error);
       }
     );
   }
 
-  modifyUserInfo(){
+  modifyUserInfo() {
     this.errorMessage = '';
     this.successMessage = '';
 
     const token = localStorage.getItem('token');
-    
-    if(!token){
-      console.log("No token provided !");
+
+    if (!token) {
+      console.log('No token provided !');
       return;
     }
 
-    this.memberService.modifyUser(
-      token, 
-      {
+    this.memberService
+      .modifyUser(token, {
         nickname: this.nickname,
         firstname: this.firstname,
         lastname: this.lastname,
@@ -79,17 +80,17 @@ export class MyProfileMainComponent {
         year: this.year,
         program: this.program,
         school: this.school,
-        password: this.password
-      }).subscribe(
-        (response) =>{
+        password: this.password,
+      })
+      .subscribe(
+        (response) => {
           console.log(response);
-          this.successMessage = "Successfully updated user !";
+          this.successMessage = 'Successfully updated user !';
         },
-        (error) =>{
-          console.error("Error updating user !", error);
-          this.errorMessage = "Error updating user !";
+        (error) => {
+          console.error('Error updating user !', error);
+          this.errorMessage = 'Error updating user !';
         }
-      )
-    
+      );
   }
 }

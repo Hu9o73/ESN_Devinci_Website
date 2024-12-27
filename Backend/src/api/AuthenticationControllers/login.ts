@@ -8,7 +8,7 @@ const SECRET_KEY = process.env.JWT_SECRET || 'default_secret_key';
 export const login = async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, password } = req.body;
-        
+
         // Find user by email
         const user = await User.findOne({ where: { email } });
         if (!user) {
@@ -25,8 +25,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
         // Generate JWT token
         const token = jwt.sign(
-            { id: user.id, email: user.email, role: user.role }, 
-            SECRET_KEY, 
+            { id: user.id, email: user.email, role: user.role },
+            SECRET_KEY,
             { expiresIn: process.env.JWT_EXPIRES_IN });
 
         res.json({ message: 'Login successful', token, user });

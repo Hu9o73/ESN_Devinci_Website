@@ -4,7 +4,7 @@ import User from '../../models/users';
 
 export const signup = async (req: Request, res: Response): Promise<void> => {
     try {
-        const {firstName, lastName, email, password, confirmPassword, year, program, school } = req.body;
+        const { firstName, lastName, email, password, confirmPassword, year, program, school } = req.body;
 
         // Check if user already exists
         const existingUser = await User.findOne({ where: { email } });

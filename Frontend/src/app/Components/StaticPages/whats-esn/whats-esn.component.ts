@@ -7,8 +7,6 @@ import { HomeFooterComponent } from '../../HomePage/home-footer/home-footer.comp
   standalone: true,
   imports: [NavbarComponent, HomeFooterComponent],
   templateUrl: './whats-esn.component.html',
-  styleUrl: './whats-esn.component.css'
+  styleUrl: './whats-esn.component.css',
 })
-export class WhatsESNComponent {
-
-}
+export class WhatsESNComponent {}
