@@ -1,5 +1,13 @@
 # Changelog
 
+## V0.0.15
+- Frontend 0.0.14 / Backend 0.0.8
+- Added the 'events' table to the database.
+- Added event model to the backend, for easy management with sequelize.
+- Frontend-wise, given the option for admins and board (bureau) members to add events to the event lists shown on the homepage from their private board dashboard.
+    - Events require a title and category, and are automatically 'signed' ('/authored') by the user who added it.
+    - Image and description are optional.
+
 ## V0.0.14
 - Frontend 0.0.13 / Backend 0.0.7
 - Frontend and backend codes are now formatted according to standards.

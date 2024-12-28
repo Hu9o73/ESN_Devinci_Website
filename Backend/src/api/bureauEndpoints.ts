@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express'
 import { authenticate, authorizeRoles } from './AuthenticationControllers/authMiddleware';
-import User from '../models/users';
+import { User } from '../ConfigFiles/dbAssociations';
 
 const router = Router();
 

@@ -7,6 +7,7 @@ import basicEndpoints from "./api/utilityEndpoints";
 import authEndpoints from "./api/routes/auth";
 import memberEndpoints from "./api/memberEndpoints";
 import bureauEndpoints from "./api/bureauEndpoints";
+import eventEndpoints from "./api/routes/events";
 
 // Import database
 import sequelize from "./ConfigFiles/dbConfig";
@@ -25,7 +26,7 @@ app.use(express.json());
 
 // CORS for specific origins
 app.use(cors({
-  origin: ['localhost:4200', 'http://esn.hugobnl.fr'],
+  origin: ['http://localhost:4200', 'http://esn.hugobnl.fr'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -48,6 +49,7 @@ app.use(basicEndpoints);
 app.use(authEndpoints);
 app.use(memberEndpoints);
 app.use(bureauEndpoints);
+app.use(eventEndpoints);
 
 // Serve Swagger UI at /api-docs
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

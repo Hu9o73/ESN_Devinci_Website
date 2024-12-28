@@ -23,4 +23,15 @@ export class BureauService {
     const body = { idToUpdate, roleToUpdate };
     return this.http.put(`${this.apiUrl}/modifyRole`, body, { headers });
   }
+
+  createEvent(
+    eventData: any,
+    token: string
+  ): Observable<any> {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    return this.http.post(`${this.apiUrl}/addEvent`, eventData, { headers });
+  }
+
 }
