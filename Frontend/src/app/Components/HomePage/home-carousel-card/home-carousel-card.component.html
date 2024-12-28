@@ -1,5 +1,5 @@
 <div class="card">
-   <div class="position-relative">
+   <div *ngIf="image" class="position-relative">
       <img [src]="image" class="card-img-top" alt="{{ title }}" />
    </div>
    <div class="card-body">
@@ -8,9 +8,6 @@
       <p class="card-text">{{ description }}</p>
       <div class="d-flex justify-content-between mb-2">
          <div class="d-flex align-items-center">
-            <div class="me-2">
-               <img [src]="authorImage" alt="{{ authorName }}" class="img-fluid rounded-circle border" width="40" />
-            </div>
             <div>
                <h4 class="mb-0">{{ authorName }}</h4>
             </div>

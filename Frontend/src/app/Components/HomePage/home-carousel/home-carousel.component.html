@@ -11,9 +11,15 @@
                   <div class="row">
                      <!-- Render actual cards -->
                      <div *ngFor="let card of group" class="col-12 col-lg-4 mt-4 mt-lg-5">
-                        <app-home-carousel-card [image]="card.image" [title]="card.title" [category]="card.category"
-                           [description]="card.description" [authorImage]="card.authorImage"
-                           [authorName]="card.authorName"></app-home-carousel-card>
+                        <app-home-carousel-card 
+                           [id]="card.id"
+                           [image]="card.imageLink" 
+                           [title]="card.title" 
+                           [category]="card.category"
+                           [description]="card.description" 
+                           [authorName]="authorNames[card.author] || 'Loading...'"
+                           >
+                        </app-home-carousel-card>
                      </div>
                      <!-- Render placeholders if needed -->
                      <div *ngFor="let placeholder of generatePlaceholders(3 - group.length)"

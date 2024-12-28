@@ -28,6 +28,19 @@ export class AuthService {
     return currentUser ? JSON.parse(currentUser) : null;
   }
 
+  currentUserFromToken(): number {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return -1;
+    }
+    try {
+      const decoded: any = jwtDecode(token);
+      return decoded.id;
+    } catch (error) {
+      return -1;
+    }
+  }
+
   // Signup
   signup(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/signup`, userData);

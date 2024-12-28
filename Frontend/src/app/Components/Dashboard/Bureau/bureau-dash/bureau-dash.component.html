@@ -1,3 +1,55 @@
-<h1>
-    Placeholder for the bureau administrating page.
-</h1>
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-12">
+            <h3>Add an event !</h3>
+			<form role="form">
+				<label>Title and category</label>
+				<div class="input-group">
+
+					<input class="form-control" 
+                        [(ngModel)]="event.title" 
+                        name="nickname"
+                        required
+                    />
+
+					<select id="inputSchool" class="form-control" [(ngModel)]="event.category" name="category" required>
+						<option value="" disabled selected>Category...</option>
+						<option>Bar</option>
+						<option>CDL</option>
+						<option>School Event</option>
+                        <option>Misc</option>
+					</select>
+				</div>
+				<br />
+				<div class="form-group">
+					<label> Description </label>
+					<textarea class="form-control" rows="7" [(ngModel)]="event.description" name="description"></textarea>
+				</div>
+				<br />
+				<div class="form-group">
+					<label>
+                        Image Link
+                        <br />
+                        <small>Needs to point directly to an image link.</small>
+                    </label>
+					<input type="url" class="form-control" [(ngModel)]="event.imageLink" name="imageLink" />
+				</div>
+
+				<br />
+				<button type="submit" (click)="createEvent()" class="btn btn-success">
+					Add the event !
+				</button>
+			</form>
+			<br />
+			<div *ngIf="errorMessage" class="alert alert-warning">
+				{{ errorMessage }}
+			</div>
+			<div *ngIf="successMessage" class="alert alert-success">
+				{{ successMessage }}
+			</div>
+			<br />
+		</div>
+	</div>
+</div>
+
