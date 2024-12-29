@@ -34,4 +34,14 @@ export class BureauService {
     return this.http.post(`${this.apiUrl}/addEvent`, eventData, { headers });
   }
 
+  inactivateEvent(
+    eventId: number,
+    token: string
+  ): Observable<any> {
+    const headers = { 
+      Authorization: `Bearer ${token}`,
+    };
+    return this.http.put(`${environment.apiUrl}/events/${eventId}/inactivate`, {}, { headers });
+  }
+
 }

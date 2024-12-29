@@ -45,7 +45,7 @@ export class HomeCarouselComponent {
   fetchAllAuthors() {
     // Collect all unique author IDs. Runs once, to avoid loop on component change (seemed to happen way to often for the carousel...)
     const authorIds = [...new Set(this.cards.map((card) => card.author))];
-
+    console.log(authorIds);
     authorIds.forEach((authorId) => {
       this.http
         .get<{ firstName: string }>(

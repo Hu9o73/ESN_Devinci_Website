@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Backend for the ESN website",
   "main": "src/index.ts",
   "scripts": {

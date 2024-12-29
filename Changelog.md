@@ -1,5 +1,14 @@
 # Changelog
 
+## V0.0.16
+- Frontend 0.0.15 / Backend 0.0.9
+- Added an event list to the bureau dashboard, with an option to delete the event
+    - The event isn't deleted from the database but is "inactivated".
+    - This means that it don't appear anymore on the homepage, but still exists in the database.
+    - The corresponding API routes are, obviously, protected and role-restricted.
+- Commented-out the useless "Event" and "Dashboard" tabs on the dashboard navbar.
+    - Users are redirected to the "My Profile" page by default.
+
 ## V0.0.15
 - Frontend 0.0.14 / Backend 0.0.8
 - Added the 'events' table to the database.
