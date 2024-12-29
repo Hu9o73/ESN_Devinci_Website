@@ -1,6 +1,9 @@
 import express, { Express } from "express";
+import https from 'https';
+import fs from 'fs';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+
 
 // Import endpoints
 import basicEndpoints from "./api/utilityEndpoints";
@@ -18,6 +21,8 @@ const cors = require('cors');
 const app: Express = express();
 const port = 3000;
 
+const isProd = false;
+
 // Body parser
 app.use(express.json());
 
@@ -26,7 +31,7 @@ app.use(express.json());
 
 // CORS for specific origins
 app.use(cors({
-  origin: ['http://localhost:4200', 'http://esn.hugobnl.fr'],
+  origin: ['http://localhost:4200', 'https://esn.hugobnl.fr', 'https://www.esn.hugobnl.fr'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -37,7 +42,7 @@ const swaggerOptions = {
     openapi: '3.0.0', // Swagger version
     info: {
       title: 'API Documentation',
-      version: '0.0.1',
+      version: '0.0.11',
       description: 'API documentation for the backend',
     },
   },
@@ -60,7 +65,21 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Database test connection
 testDatabaseConnection(sequelize);
 
-// Server running ?
-app.listen(port, () => {
+if(isProd){
+  const options = {
+    key: fs.readFileSync('[REPLACE ME]'),
+    cert: fs.readFileSync('[REPLACE ME]'),
+  };
+  // Start the HTTPS server
+  https.createServer(options, app).listen(port, () => {
+    console.log(`[server]: HTTPS server is running at https://localhost:${port}`);
+  });
+
+
+}else{
+  // Server running ?
+  app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
+}
+

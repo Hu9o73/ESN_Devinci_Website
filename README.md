@@ -1,10 +1,10 @@
-# ESN Devinci Website v0.0.17
+# ESN Devinci Website v0.0.18
 
-### Frontend V0.0.16 | Backend V0.0.10
+### Frontend V0.0.16 | Backend V0.0.11
 
 <br>
 
-Website finally accessible (on version 0.0.13, often updated to latest release) ! [Website Link](http://esn.hugobnl.fr)
+Website finally accessible on version 0.0.18 ! [Website Link](http://esn.hugobnl.fr)
 
 - Users:
     - Can sign-up, connect and access your dashboard !

@@ -1,5 +1,9 @@
 # Changelog
 
+## V0.0.18
+- Frontend 0.0.16 / Backend 0.0.11
+- Added SSL certificate support on backend side
+
 ## V0.0.17
 - Frontend 0.0.16 / Backend 0.0.10
 - Added the /api-docs route to the backend to access the API's documentation.

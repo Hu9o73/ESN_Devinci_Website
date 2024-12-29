@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import type { ColDef, GridReadyEvent } from 'ag-grid-community';
-import { AllCommunityModule, ModuleRegistry, themeAlpine } from 'ag-grid-community';
-import { themeQuartz } from 'ag-grid-community';
+import { AllCommunityModule, ModuleRegistry, themeQuartz } from 'ag-grid-community';
 
 import { environment } from '../../../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
