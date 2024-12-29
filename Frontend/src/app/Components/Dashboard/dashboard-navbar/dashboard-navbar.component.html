@@ -4,9 +4,13 @@
 
     <nav>
       <ul>
+        <!--
         <li><a routerLink="/dashboard/myDash"><i class="fa-solid fa-gauge"></i> My Dashboard</a></li>
+        -->
         <li><a routerLink="/dashboard/myProfile"><i class="fa-solid fa-user"></i> My Profile</a></li>
+        <!--
         <li><a routerLink="/dashboard/events"><i class="fa-regular fa-calendar-days"></i> Events</a></li>
+        -->
         <ng-container *ngIf="isBureau">
           <li><a routerLink="/dashboard/bureau"><i class="fa-solid fa-user-tie"></i> Bureau</a></li>
         </ng-container>

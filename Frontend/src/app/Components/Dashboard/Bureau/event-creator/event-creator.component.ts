@@ -4,14 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { BureauService } from '../../../../Services/Bureau/bureau.service';
 import { AuthService } from '../../../../Services/Authentication/auth.service';
 
+
 @Component({
-  selector: 'app-bureau-dash',
+  selector: 'app-event-creator',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './bureau-dash.component.html',
-  styleUrl: './bureau-dash.component.css',
+  templateUrl: './event-creator.component.html',
+  styleUrl: './event-creator.component.css'
 })
-export class BureauDashComponent {
+export class EventCreatorComponent {
   successMessage = '';
   errorMessage = '';
 

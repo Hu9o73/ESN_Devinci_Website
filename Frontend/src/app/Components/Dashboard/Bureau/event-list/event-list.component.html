@@ -1,0 +1,16 @@
+<hr>
+<h3>Event management</h3>
+
+<div class="content">
+    <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
+    <ag-grid-angular
+      style="width: 100%; height: 400px;"
+      [rowHeight]="50"
+      [theme]="theme"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      (gridReady)="onGridReady($event)"
+    />
+  </div>

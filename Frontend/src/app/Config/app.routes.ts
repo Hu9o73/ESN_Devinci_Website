@@ -31,10 +31,10 @@ export const routes: Routes = [
     component: DashboardMainComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: MyDashMainComponent },
-      { path: 'myDash', component: MyDashMainComponent },
+      { path: '', component: MyProfileMainComponent },
+      //{ path: 'myDash', component: MyDashMainComponent },
       { path: 'myProfile', component: MyProfileMainComponent },
-      { path: 'events', component: EventsMainComponent },
+      //{ path: 'events', component: EventsMainComponent },
       {
         path: 'admin',
         component: AdminMainComponent,
