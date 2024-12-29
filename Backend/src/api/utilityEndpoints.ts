@@ -45,4 +45,29 @@ router.get("/user/:userId/firstName", async (req: Request, res: Response) => {
   }
 });
 
+
+router.get('/users', async (req: Request, res: Response) => {
+  try {
+    // Query the users table for id, firstName, and lastName
+    const users = await User.findAll({
+      attributes: ['id', 'firstName', 'lastName', 'role'],  // Select only the required columns
+    });
+
+    // If no users are found, return an empty array or an appropriate message
+    if (!users) {
+      res.status(404).json({ message: 'No users found' });
+      return;
+    }
+
+    // Send the fetched data as a response
+    res.status(200).json(users);
+    return;
+  } catch (error) {
+    // Handle any errors that occur during the query
+    console.error(error);
+    res.status(500).json({ message: 'Server error', error });
+    return;
+  }
+});
+
 export default router;

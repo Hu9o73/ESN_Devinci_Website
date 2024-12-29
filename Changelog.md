@@ -1,5 +1,14 @@
 # Changelog
 
+## V0.0.17
+- Frontend 0.0.16 / Backend 0.0.10
+- Added the /api-docs route to the backend to access the API's documentation.
+- Added a protected endpoint to retrieve the users, their first and last name, and their role.
+- Admins can now access the list of members and see their corresponding id to update their roles easily from their dashboard.
+- Commented out the password modification section as it's not a priority at the moment.
+- Commented out the alert placeholder on the user's profile.
+- Commented out the "I'm interested" button on the cards (until the option is implemented).
+
 ## V0.0.16
 - Frontend 0.0.15 / Backend 0.0.9
 - Added an event list to the bureau dashboard, with an option to delete the event

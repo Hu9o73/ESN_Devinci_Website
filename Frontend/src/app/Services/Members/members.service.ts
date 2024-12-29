@@ -37,6 +37,6 @@ export class MembersService {
       Authorization: `Bearer ${token}`,
     };
     const body = { password: password };
-    return this.http.put(`${this.apiUrl}/verifyPwd`, body, { headers });
+    return this.http.post(`${this.apiUrl}/verifyPwd`, body, { headers });
   }
 }

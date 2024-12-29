@@ -38,7 +38,7 @@ router.get('/whoAmI', authenticate, async (req: Request & { user?: any }, res: R
 });
 
 
-router.put('/verifyPwd',
+router.post('/verifyPwd',
     authenticate,
     async (req: Request & { user?: any }, res: Response) => {
         try {
